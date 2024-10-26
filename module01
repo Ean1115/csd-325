@@ -1,0 +1,15 @@
+ Volume in drive C is OSDisk
+ Volume Serial Number is 4E20-251B
+
+ Directory of C:\Users\MASONERE\csd mkdir csd\csd-325
+
+10/26/2024  04:15 PM    <DIR>          .
+10/26/2024  04:15 PM    <DIR>          ..
+10/26/2024  03:26 PM                66 .gitattributes
+10/26/2024  03:26 PM             3,238 .gitignore
+10/26/2024  04:08 PM                 0 git
+10/26/2024  03:49 PM    <DIR>          module-1
+10/26/2024  04:15 PM                 0 module01
+10/26/2024  03:26 PM                12 README.md
+               5 File(s)          3,316 bytes
+               3 Dir(s)  56,771,870,720 bytes free
