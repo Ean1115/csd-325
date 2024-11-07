@@ -1,3 +1,5 @@
+#Module 5.2 Assignment Ean Masoner, Usiel Figueroa, and Alisa Steensen
+#Like stated below this program represents a simulation of wilfire spreading
 """Forest Fire Sim, modified by Sue Sampson, based on a program by Al Sweigart
 A simulation of wildfires spreading in a forest. Press Ctrl-C to stop.
 Inspired by Nicky Case's Emoji Sim http://ncase.me/simulating/model/
