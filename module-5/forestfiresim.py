@@ -1,11 +1,3 @@
-#Module 5.2 Assignment Ean Masoner, Usiel Figueroa, and Alisa Steensen
-#Like stated below this program represents a simulation of wilfire spreading
-"""Forest Fire Sim, modified by Sue Sampson, based on a program by Al Sweigart
-A simulation of wildfires spreading in a forest. Press Ctrl-C to stop.
-Inspired by Nicky Case's Emoji Sim http://ncase.me/simulating/model/
-** use spaces, not indentation to modify **
-Tags: short, bext, simulation"""
-
 import random, sys, time
 
 try:
@@ -23,6 +15,7 @@ HEIGHT = 22
 TREE = 'A'
 FIRE = '@'
 EMPTY = ' '
+WATER = '~'  # New constant for water feature
 
 # (!) Try changing these settings to anything between 0.0 and 1.0:
 INITIAL_TREE_DENSITY = 0.20  # Amount of forest that starts with trees.
@@ -51,12 +44,14 @@ def main():
                     # previous iteration, just do nothing here:
                     continue
 
-                if ((forest[(x, y)] == EMPTY)
-                    and (random.random() <= GROW_CHANCE)):
+                if forest[(x, y)] == WATER:
+                    nextForest[(x, y)] = WATER  # Water feature remains unchanged
+                elif ((forest[(x, y)] == EMPTY)
+                      and (random.random() <= GROW_CHANCE)):
                     # Grow a tree in this empty space.
                     nextForest[(x, y)] = TREE
                 elif ((forest[(x, y)] == TREE)
-                    and (random.random() <= FIRE_CHANCE)):
+                      and (random.random() <= FIRE_CHANCE)):
                     # Lightning sets this tree on fire.
                     nextForest[(x, y)] = FIRE
                 elif forest[(x, y)] == FIRE:
@@ -82,7 +77,9 @@ def createNewForest():
     forest = {'width': WIDTH, 'height': HEIGHT}
     for x in range(WIDTH):
         for y in range(HEIGHT):
-            if (random.random() * 100) <= INITIAL_TREE_DENSITY:
+            if (WIDTH // 3 < x < 2 * WIDTH // 3) and (HEIGHT // 3 < y < 2 * HEIGHT // 3):
+                forest[(x, y)] = WATER  # Place water feature in the center
+            elif (random.random() * 100) <= INITIAL_TREE_DENSITY:
                 forest[(x, y)] = TREE  # Start as a tree.
             else:
                 forest[(x, y)] = EMPTY  # Start as an empty space.
@@ -100,7 +97,9 @@ def displayForest(forest):
             elif forest[(x, y)] == FIRE:
                 bext.fg('red')
                 print(FIRE, end='')
-          	
+            elif forest[(x, y)] == WATER:
+                bext.fg('blue')
+                print(WATER, end='')
             elif forest[(x, y)] == EMPTY:
                 print(EMPTY, end='')
         print()
