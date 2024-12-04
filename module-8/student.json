@@ -1,0 +1,20 @@
+[
+    {
+        "f_name": "John",
+        "l_name": "Doe",
+        "Student_id": 1234,
+        "email": "john.doe@example.com"
+    },
+    {
+        "f_name": "Alice",
+        "l_name": "Smith",
+        "Student_id": 5678,
+        "email": "alice.smith@example.com"
+    },
+    {
+        "f_name": "Ean",
+        "l_name": "Masoner",
+        "Student_id": 1234,
+        "email": "ean@example.com"
+    }
+]
